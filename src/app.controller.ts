@@ -14,4 +14,9 @@ export class AppController {
   findOne(@Param('userId') id: string, @Res() res): string {
     return res.status(200).send({id, userName: '이정주', accountNum:123});
   }
+
+  @Post()
+  findTwo(@Param('id') userId: string, @Res() res): string {
+    return res.status(201).send({userId, userName: '이정주', accountNum:123});
+  }
 }
