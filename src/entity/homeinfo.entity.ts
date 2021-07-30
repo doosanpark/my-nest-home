@@ -24,6 +24,9 @@ export class HomeInfoEntity {
   content: string;
 
   @Column()
+  linkUrl: string;
+
+  @Column()
   thumbnailImagePath: string;
 
   @Column()
