@@ -12,7 +12,7 @@ export class SearchController {
     const retVal = {
       searchKeyword: keyword,
       searchList: [],
-    };
+    }; 
 
     try {
       const result = await createQueryBuilder('homeInfo')
