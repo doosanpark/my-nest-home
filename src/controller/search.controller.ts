@@ -5,7 +5,7 @@ import { getRepository, createQueryBuilder } from 'typeorm';
 
 @Controller('api/search')
 export class SearchController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Post('list')
   async list(@Body('keyword') keyword: string, @Res() res): Promise<string> {
@@ -41,7 +41,7 @@ export class SearchController {
     } catch (e) {
       console.log(e);
     }
- 
+
     return res.status(200).send(retVal);
   }
 }
