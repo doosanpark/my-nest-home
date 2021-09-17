@@ -17,3 +17,12 @@ CREATE TABLE `homeinfo` (
 
  INSERT INTO `my_home`.`homeinfo` (`id`, `subject`, `floor`, `price`, `area`, `summary`, `content`, `linkUrl`, `thumbnailImagePath`, `creator`, `createdDate`) 
 VALUES ('1', '마포자이 101동', '11/25층', '19억', '149/107㎡', '마포역 공덕역 도보거리', '', '', '', 'SYKim', '2021-07-30');
+
+DELIMITER //
+CREATE PROCEDURE GetHomeInfo(IN searchId BIGINT)
+ BEGIN
+	 SELECT * 
+	 FROM homeinfo
+	 WHERE id = searchId;
+ END //
+DELIMITER ;

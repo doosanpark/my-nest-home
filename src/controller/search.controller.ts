@@ -45,6 +45,23 @@ export class SearchController {
     return res.status(200).send(retVal);
   }
 
+  @Post('item')
+  async item(@Body('id') id: number, @Res() res): Promise<string> {
+    const retVal = {
+      id: id,
+      searchItem: {},
+    };
+
+    try {
+      const result = await getConnection().query(`CALL GetHomeInfo(${id})`);
+      retVal.searchItem = result;
+    } catch (e) {
+      console.log(e);
+    }
+
+    return res.status(200).send(retVal);
+  }
+
   @Post('update')
   async update(
     @Body('homeInfo') homeInfo: HomeInfoEntity,
