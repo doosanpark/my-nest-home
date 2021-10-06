@@ -9,7 +9,7 @@ import { AccountService } from './account/account.service';
 
 @Module({
   imports: [AccountModule, TypeOrmModule.forRoot()],
-  controllers: [AccountController, AppController, SearchController],
-  providers: [AppService, AccountService],
+  controllers: [AppController, SearchController],
+  providers: [AppService],
 })
 export class AppModule { }
