@@ -1,10 +1,10 @@
 import { Controller, Get, Post, Param, Body, Res } from '@nestjs/common';
 import { AppService } from '../app.service';
-import { HomeInfoEntity } from 'src/entity/homeinfo.entity';
+import { HomeInfoEntity } from 'src/homeinfo/homeinfo.entity';
 import { getRepository, createQueryBuilder, getConnection } from 'typeorm';
 
 @Controller('api/search')
-export class SearchController {
+export class HomeinfoController {
   constructor(private readonly appService: AppService) {}
 
   @Post('insert')

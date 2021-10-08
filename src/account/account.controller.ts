@@ -1,5 +1,4 @@
 import { Controller, Get, Post, Param, Body, Res } from '@nestjs/common';
-import { HomeInfoEntity } from 'src/entity/homeinfo.entity';
 import { createQueryBuilder } from 'typeorm';
 import { AccountService } from './account.service';
 
